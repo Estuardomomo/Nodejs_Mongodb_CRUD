@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+//Conectiong to db
+mongoose.connect('mongodb://localhost/crud-pizza')
+    .then(db => console.log('DB conectada'))
+    .catch(err => console.log(err));
 // importing routes
 const indexRoutes = require('./routes/index')
 // settings

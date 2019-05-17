@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 const TaskSchema = new Schema({
     Nombre: String,
     Descripcion: String,
-    Ingredientes: Array,
-    TipoMasa: Number,
-    Porciones: Number,
+    Ingredientes: String,
+    TipoMasa: String,
+    Porciones: String,
     QuesoExtra: {
         type: Boolean,
         default: false

@@ -1,4 +1,3 @@
-
 <% include partials/_header %>
     <div class="container">
         <div class="row">
@@ -17,25 +16,25 @@
                             <div class="form-group">
                                 INGREDIENTES:
                                 <br />
-                                <input type="checkbox" name="Tomate"> Tomate
-                                <input type="checkbox" name="Cebolla"> Cebolla
-                                <input type="checkbox" name="Aceituna"> Aceituna negra
-                                <input type="checkbox" name="Champiñones"> Champiñones
-                                <input type="checkbox" name="Jamon"> Jamón
-                                <input type="checkbox" name="Peperoni"> Peperoni
-                                <input type="checkbox" name="Chile"> Chile Pimiento
-                                <input type="checkbox" name="Piña"> Piña
+                                <input type="checkbox" value="Tomate" name="Ingredientes"> Tomate
+                                <input type="checkbox" value="Cebolla" name="Ingredientes"> Cebolla
+                                <input type="checkbox" value="Aceituna" name="Ingredientes"> Aceituna negra
+                                <input type="checkbox" value="Champiñones" name="Ingredientes"> Champiñones
+                                <input type="checkbox" value="Jamon" name="Ingredientes"> Jamón
+                                <input type="checkbox" value="Peperoni" name="Ingredientes"> Peperoni
+                                <input type="checkbox" value="Chile" name="Ingredientes"> Chile Pimiento
+                                <input type="checkbox" value="Piña" name="Ingredientes"> Piña
                             </div>
                             <div class="form-group">
                                 TIPO DE MASA:
                                 <br />
-                                <input type="radio" name="masa">Gruesa
+                                <input type="radio" name="masa" id="Gruesa" value="Gruesa">Gruesa
                                 <br />
-                                <input type="radio" name="masa">Delgada
+                                <input type="radio" name="masa" id="Delgada" value="Delgada">Delgada
                             </div>
                             <div class="form-group">
                                 PORCIONES:
-                                <input type="number" min="6" max="12" step="2">
+                                <input type="number" name="Porciones" min="6" max="12" step="2">
                             </div>
                             <button type="submit" class="btn btn-primary">
                                 Add
@@ -50,13 +49,29 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Tittle</th>
-                            <th>Description</th>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Ingredientes</th>
+                            <th>Masa</th>
+                            <th>Porciones</th>
                             <th>Operation</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        <% for(var i = 0; i< tasks.length; i++) { %>
+                            <tr>
+                                <td> <%= i+1 %> </td>
+                                <td> <%= tasks[i].nombre %> </td>
+                                <td> <%= tasks[i].descripcion %> </td>
+                                <td> <%= tasks[i].Ingredientes %> </td>
+                                <td> <%= tasks[i].masa %> </td>
+                                <td> <%= tasks[i].Porciones %> </td>
+                                <td>
+                                    <a href="" class="btn btn-info"> Editar </a>
+                                    <a href="" class="btn btn-danger"> Eliminar </a>
+                                </td>
+                            </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </div>
